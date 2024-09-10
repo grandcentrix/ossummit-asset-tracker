@@ -1,0 +1,47 @@
+mainmenu "Thingsboard Asset Tracker Configuration"
+
+menu "Thingsboard Asset Tracker App"
+
+# Add CONFIG_TBAT_LOG_LEVEL which defines the maximnum compiled-in loglevel for the app.
+module = TBAT
+module-str = Thingsboard Asset Tracker
+source "subsys/logging/Kconfig.template.log_config"
+
+config TBAT_THINGSBOARD_ACCESS_TOKEN
+    string "Thingsboard access token"
+    default ""
+	help
+		Thingsboard access token for the device.
+
+config TBAT_THINGSBOARD_HOSTNAME
+	string "CoAP server hostname"
+	default "coap.thingsboard.cloud"
+	help
+		Hostname of the Thingsboard's CoAP server
+
+config TBAT_THINGSBOARD_PORT
+	int "CoAP server port"
+	default 5683
+	help
+		Port of the Thingsboard's CoAP server
+
+config TBAT_GPS_PERIODIC_INTERVAL
+	int "Interval for periodic GPS fixes"
+	range 10 65535
+	default 120
+	help
+	  Interval (in seconds) for periodic fixes.
+
+config TBAT_GPS_PERIODIC_TIMEOUT
+	int "Timeout for periodic GPS fixes"
+	range 0 65535
+	default 60
+	help
+	  Tmeout (in seconds) for periodic fixes.
+	  If set to zero, GPS is allowed to run indefinitely until a valid PVT estimate is produced.
+
+endmenu
+
+menu "Zephyr"
+source "Kconfig.zephyr"
+endmenu
