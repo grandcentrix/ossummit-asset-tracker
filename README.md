@@ -5,7 +5,8 @@ An example for a minimal asset tracking device that connects to
 data using CoAP.
 
 This code was created for the talk "How to create an asset tracker with Zephyr and Thingsboard in no time"
-presented at the Open Source Summit Europe 2024 ([slides](./doc/Open Source Summit Europe 2024 Talk.pdf)).
+presented at the Open Source Summit Europe 2024.
+Find the corresponding slides [here](<doc/Open Source Summit Europe 2024 Talk.pdf>).
 
 ## Overview
 
